@@ -1,0 +1,27 @@
+# Contenido
+
+- [ ] [Opcional] Genéricos (5m)
+- Tipos Avanzado. (45m)
+  - [J] Alias.
+  - [J] Intersección.
+  - [S] Union.
+  - [S] Guardas.
+    - User defined guards: duck typing and type predicate.
+    - Typeof guards.
+    - Instanceof guards.
+  - [J] String & Numeric literals.
+  - [J] Keyof.
+  - [S] Tipos mapeados.
+  - [S] Tipos condicionales.
+  - [J] Recursividad.
+- Tipos de utilidad. (45m)
+  - [J] Readonly.
+  - [S] Partial.
+  - [S] Required.
+  - [J] Exclude & Extract.
+  - [S] Pick & Omit.
+  - [J] Record.
+  - [S] NonNullable.
+  - [J] Function Helpers
+- Ejemplos Avanzados. (15m)
+  - [S] DeepGet
