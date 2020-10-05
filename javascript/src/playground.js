@@ -132,31 +132,24 @@ console.log("* CONCAT *******************************");
 
 const array01 = ["a", "b", "c", "d"];
 const array02 = ["e", "f", "g", "h"];
-// const array03 = ["i", "j", "k", "l"];
-// const array04 = ["ll", "m", "n", "ñ"];
-// const array05 = ["o", "p", "q", "r"];
-
-// const concat = ( arg1, arg2) => {
-//   [arg1,arg2].reduce((arrayConcatenado , arrayEntrada) => arrayConcatenado.concat(arrayEntrada) )
-// };
-
-// console.log(concat(array02, array04));
+const array03 = ["i", "j", "k", "l"];
+const array04 = ["ll", "m", "n", "ñ"];
+const array05 = ["o", "p", "q", "r"];
 
 
-// const arg1 = [0,1,2];
-// const arg2 = [3,4];
-// const concat = (arg1, arg2) => [arg1, arg2].reduce((prevArray, currentArray) => prevArray.concat(currentArray));
-// concat(arg1, arg2);
-
-const concat = ( arg1, arg2) => {
-  console.log(arg1, arg2);
-  arraydemo = [arg1, arg2];
-
-  [arraydemo].reduce(function(valorAnterior, valorActual){
+const concatA = ( ...arraysVarios ) => {
+  return arraysVarios.reduce((valorAnterior, valorActual) => {
     return valorAnterior.concat(valorActual);
-  }, [], )
+  }, [] )
 }
-console.log(concat(array02, array01));
+
+/* Version con return implicito
+const concatA = ( ...arraysVarios ) => 
+  arraysVarios.reduce((valorAnterior, valorActual) => 
+    valorAnterior.concat(valorActual) , [] )
+*/
+
+console.log(concatA(array01, array02, array03, array04, array05)); 
 console.log("* fin de concat ***");
 
 /**
