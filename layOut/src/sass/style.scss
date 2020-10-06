@@ -1,0 +1,9 @@
+$color: gold;
+
+
+div {
+    color:$color;
+    &p{
+        color: green;
+    }
+}

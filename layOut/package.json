@@ -1,0 +1,20 @@
+{
+  "name": "layout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^1.12.4",
+    "sass": "^1.26.2"
+  },
+  "dependencies": {
+    "set-default-browser": "^1.1.1"
+  }
+}

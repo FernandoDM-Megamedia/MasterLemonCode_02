@@ -1,0 +1,42 @@
+
+/* importamos los themas*/
+
+// @import "./themes/theme01";
+@import "./themes/theme02";
+
+.content {
+    display: flex;
+    flex-direction: column;
+    
+    .base{
+        width: 200px;
+        height: 100px;
+        color: black;
+        background-color: $bg_Base;
+        border: 1px solid grey;
+        border-radius: $border_radius;
+        &.important{
+            background-color: $bg_Important;
+        }
+        &.warning{
+            background-color: $bg_Warning;
+        }
+        &.shadow{
+            background-color: white;
+            -webkit-box-shadow: $shadow; 
+            box-shadow: $shadow;
+        }
+    }
+    .font{
+        color: black;
+        & .principal{
+            
+            font-family: $principlaFont;
+        }
+        & .secundary{
+            
+            font-family: $secundaryFont;
+        }
+    }
+}
+

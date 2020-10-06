@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ejercicio01.scss">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SASS</h1>
+    <h2>Ejercicio 1</h2>
+    <p>Crear una paleta de colores dinámica.</p>
+    <ul>
+        <li>Usar el lenguaje SASS para crear distintos temas de paletas de colores.</li>
+        <li>La idea es partir de un color base, y a partir de ese color generar 4 colores más oscuros de manera gradual, y cuatro colores más claros de manera gradual.</li>
+        <li>Para comprobar que todo esta funcionando como se espera utilizar el siguiente html:</li>
+    </ul>
+    <code>
+        &lt;div&gt;Darken 4&lt;/div&gt; <br>
+        &lt;div&gt;Darken 3&lt;/div&gt; <br>
+        &lt;div&gt;Darken 2&lt;/div&gt; <br>
+        &lt;div&gt;Darken 1&lt;/div&gt; <br>
+        &lt;div&gt;Base Color&lt;/div&gt; <br>
+        &lt;div&gt;Lighten 1&lt;/div&gt; <br>
+        &lt;div&gt;Lighten 2&lt;/div&gt; <br>
+        &lt;div&gt;Lighten 3&lt;/div&gt; <br>
+        &lt;div&gt;Lighten 4&lt;/div&gt; <br>
+    </code>
+    <hr/>
+    <h2>Resultado esperado .- 3 filas de 9 columnas con el degradado de color de color oscuro a claro</h2>
+    <div>
+        <h3>Usando como base el color en formato SASS hsl</h3>
+        <div class="content red">
+            <div>Darken 4</div>
+            <div>Darken 3</div>
+            <div>Darken 2</div>
+            <div>Darken 1</div>
+            <div>Base color</div>
+            <div>Lighten 1</div>
+            <div>Lighten 2</div>
+            <div>Lighten 3</div>
+            <div>Lighten 4</div>
+        </div>
+        <div class="content green">
+            <div>Darken 4</div>
+            <div>Darken 3</div>
+            <div>Darken 2</div>
+            <div>Darken 1</div>
+            <div>Base color</div>
+            <div>Lighten 1</div>
+            <div>Lighten 2</div>
+            <div>Lighten 3</div>
+            <div>Lighten 4</div>
+        </div>
+        <div class="content blue">
+            <div>Darken 4</div>
+            <div>Darken 3</div>
+            <div>Darken 2</div>
+            <div>Darken 1</div>
+            <div>Base color</div>
+            <div>Lighten 1</div>
+            <div>Lighten 2</div>
+            <div>Lighten 3</div>
+            <div>Lighten 4</div>
+        </div>
+    </div>
+    <div>
+        <h3>Usando como base el color en formato Sass Darken / Lighten </h3>
+        <div class="content red-b">
+            <div>Darken 4</div>
+            <div>Darken 3</div>
+            <div>Darken 2</div>
+            <div>Darken 1</div>
+            <div>Base color</div>
+            <div>Lighten 1</div>
+            <div>Lighten 2</div>
+            <div>Lighten 3</div>
+            <div>Lighten 4</div>
+        </div>
+        <div class="content green-b">
+            <div>Darken 4</div>
+            <div>Darken 3</div>
+            <div>Darken 2</div>
+            <div>Darken 1</div>
+            <div>Base color</div>
+            <div>Lighten 1</div>
+            <div>Lighten 2</div>
+            <div>Lighten 3</div>
+            <div>Lighten 4</div>
+        </div>
+        <div class="content blue-b">
+            <div>Darken 4</div>
+            <div>Darken 3</div>
+            <div>Darken 2</div>
+            <div>Darken 1</div>
+            <div>Base color</div>
+            <div>Lighten 1</div>
+            <div>Lighten 2</div>
+            <div>Lighten 3</div>
+            <div>Lighten 4</div>
+        </div>
+    </div>
+</body>
+</html>

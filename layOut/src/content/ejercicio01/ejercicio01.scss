@@ -1,0 +1,80 @@
+
+$base-color-red: #ff0000;
+$base-name-red: red;
+$base-hls-red: 0;
+$base-color-green: #00ff00;
+$base-name-green: green;
+$base-hls-green: 120;
+$base-color-blue: #0000ff;
+$base-name-blue: blue;
+$base-hls-blue: 240;
+$color_text_white: white;
+
+@mixin degradadoHSL($colorName, $color, $porcentaje ) {
+  @for $i from 1 through 9 {
+     $porcentaje: $porcentaje + 10;
+    .#{$colorName} div:nth-child(#{$i}) {
+      color: $color_text_white;
+      background-color:hsl($color,100%,$porcentaje);        
+    }
+  }
+}
+@mixin degradadoDarkenLighten($colorName, $color, $porcentaje ) {
+    $aux: $porcentaje;
+    @for $i from 1 through 9 {
+        .#{$colorName}-b div:nth-child(#{$i}) {
+            color: $color_text_white;
+            @if $i<5 {
+                $porcentaje: $porcentaje - 10;
+                background-color: darken($color, $porcentaje);
+            }@else{
+                @if $i==5 {
+                    background-color: darken($color, 0%);
+                }@else{
+                    background-color: lighten($color, $porcentaje); 
+                    $porcentaje: $porcentaje + 10;
+                }
+            }
+            &:after {
+                content: ($aux - 10 );
+            }
+        } 
+    }  
+}
+
+
+.content {
+  display: flex;
+  & div {
+    height: 120px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@for $j from 1 through 3 {
+  
+  @if ($j == 1) {
+    $color: $base-hls-red;
+    $porcentaje: 0%;
+    @include degradadoHSL($base-name-red, $color, $porcentaje);
+    $porcentaje: 50%;
+    @include degradadoDarkenLighten ($base-name-red, $base-color-red,$porcentaje);
+  }
+  @if ($j == 2) {
+    $color: $base-hls-green;
+    $porcentaje: 0%;
+    @include degradadoHSL($base-name-green, $color ,$porcentaje);
+    $porcentaje: 50%;
+    @include degradadoDarkenLighten ($base-name-green, $base-color-green,$porcentaje);
+  }
+  @if ($j == 3) {
+    $color: $base-hls-blue;
+    $porcentaje: 0%;
+    @include degradadoHSL($base-name-blue, $color, $porcentaje);
+    $porcentaje: 50%;
+    @include degradadoDarkenLighten ($base-name-blue, $base-color-blue,$porcentaje);
+  }
+}
