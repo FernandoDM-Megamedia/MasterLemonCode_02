@@ -40,8 +40,16 @@ module.exports = {
               }
             }
           ]
-        }
-      ]
+        },
+        {
+          test: /\.(png|jpg)$/,
+          exclude: /node_modules/,
+          loader: "url-loader",
+          options : {
+            limit: 5000,
+          },
+        },
+      ],
     },
     plugins: [
       new HtmlWebpackPlugin({
