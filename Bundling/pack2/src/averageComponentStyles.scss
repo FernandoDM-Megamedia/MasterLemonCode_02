@@ -1,0 +1,16 @@
+$background: teal;
+$jumbotronBackground : darkseagreen;
+
+.result-background {
+    background-color: $background;
+}
+.color-text {
+    color: white;
+}
+
+/* vvvvv ver esto en el proyecto murdock */
+/* :gobal no me mete prefijo y respeta la clase original */
+:global(.jumbotron).result-background {
+    background-color: $jumbotronBackground;
+    display: block;
+}

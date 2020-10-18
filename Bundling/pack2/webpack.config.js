@@ -5,9 +5,14 @@ const basePath = __dirname;
 
 module.exports = {
     context: path.join(basePath, "src"),
+    resolve: {
+      extensions: [".js", ".jsx"]
+    },
     entry: {
-      app: "./index.js",
-      appStyles: ["./mystyles.scss"],
+      app: "./index.jsx",
+      appStyles: [
+        "./mystyles.scss"
+      ],
       vendorStyles: ["../node_modules/bootstrap/dist/css/bootstrap.css"],
     },
     output: {
@@ -16,30 +21,40 @@ module.exports = {
     module: {
       rules: [
         {
-          test: /\.js$/,
+          test: /\.jsx?$/,
           exclude: /node_modules/,
           loader: "babel-loader"
-        },
-        {
-          test: /\.css$/,
-          use: [
-            MiniCssExtractPlugin.loader,
-            "css-loader",
-          ]
         },
         {
           test: /\.scss$/,
           exclude: /node_modules/,
           use: [
             MiniCssExtractPlugin.loader,
-            "css-loader",
+            {
+              loader: "css-loader",
+              options: {
+                modules: {
+                  // localsConvention: "camelCase", <--- aqui no funciona, la siguiente linea si 
+                  exportLocalsConvention: "camelCase",
+                  localIdentName: "[name]__[local]_[hash:base64:5]",
+                },
+                // localsConvention: 'camelCase', <--- error 
+              },
+            },
             {
               loader: "sass-loader",
               options: {
                 implementation: require("sass"),
-              }
-            }
-          ]
+              },
+            },
+          ],
+        },
+        {
+          test: /\.css$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            "css-loader"
+          ],
         },
         {
           test: /\.(png|jpg)$/,
@@ -49,13 +64,17 @@ module.exports = {
             limit: 5000,
           },
         },
+        {
+          test: /\.html$/,
+          loader: "html-loader",          
+        },
       ],
     },
     plugins: [
       new HtmlWebpackPlugin({
         filename: 'index.html', // output a dist
         template: 'index.html', // input de donde lee
-        //hash: true,
+        // hash: true,
       }),
       new MiniCssExtractPlugin({
         filename: "[name].[chunkhash].css",
@@ -64,5 +83,5 @@ module.exports = {
     ],
     devServer: {
       port: 8081,
-    }
+    },
   };
